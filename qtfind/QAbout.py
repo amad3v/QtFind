@@ -10,7 +10,7 @@ class QAbout(QDialog):
         super().__init__(parent)
         self.app_icon = app_icon
 
-        self.lbl_name = QLabel('QtFind')
+        self.lbl_name = QLabel('QtFind 1.0.2')
         self.lbl_description = QLabel('Graphical interface for the powerful command find')
         self.lbl_link = QLabel('<a href="https://github.com/amad3v/QtFind">GitHub.com</a>')
         self.lbl_copyright = QLabel('\nCopyright \xa9 2019 - amad3v\n')
