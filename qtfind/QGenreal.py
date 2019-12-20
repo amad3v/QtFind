@@ -6,10 +6,8 @@ from qtfind.QSpacers import *
 
 class QGeneral(QGroupBox):
     def __init__(self, widget_height=32, *__args):
-        # allow only numbers between 0 and 9999999
         super().__init__(*__args)
         self.setTitle('General:')
-        # set font weight
         self.setFont(set_bold(True))
         self.__widget_height = widget_height
         self.__class_dimensions = [0, 0]
@@ -177,7 +175,7 @@ class QGeneral(QGroupBox):
 
     @widget_height.setter
     def widget_height(self, value):
-        self.__class_dimensions[1] = value  # +30
+        self.__class_dimensions[1] = value
 
     @property
     def widget_width(self):

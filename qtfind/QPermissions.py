@@ -4,10 +4,8 @@ from qtfind.QCommon import *
 
 class QPermissions(QGroupBox):
     def __init__(self, widget_height=32, *__args):
-        # allow only numbers between 0 and 9999999
         super().__init__(*__args)
         self.setTitle('Permissions:')
-        # set font weight
         self.setFont(set_bold(True))
         self.setCheckable(True)
         self.setChecked(False)
@@ -77,11 +75,6 @@ class QPermissions(QGroupBox):
 
         for i, chk_widget in enumerate(self.chk_widgets):
             dict_args['permissions'] += read_write[chk_widget.isChecked()][i]
-
-        # if self.chk_widgets[0].isChecked():
-        #     dict_args['permissions'] = permissions[self.cmb_perms.currentIndex()] + '-readable '
-        # elif self.chk_widgets[1].isChecked():
-        #     dict_args['permissions'] = permissions[self.cmb_perms.currentIndex()] + '-writable '
 
     ###########################################
     # slots

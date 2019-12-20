@@ -5,7 +5,6 @@ from qtfind.QCommon import *
 
 class QFileSystem(QGroupBox):
     def __init__(self, widget_height=32, *__args):
-        # allow only numbers between 0 and 9999999
         super().__init__(*__args)
         self.setTitle('Filesystem:')
         # set font weight

@@ -5,10 +5,8 @@ from qtfind.QCommon import *
 
 class QTime(QGroupBox):
     def __init__(self, widget_height=32, *__args):
-        # allow only numbers between 0 and 9999999
         super().__init__(*__args)
         self.setTitle('Time:')
-        # set font weight
         self.setFont(set_bold(True))
         self.setCheckable(True)
         self.setChecked(False)
@@ -39,12 +37,6 @@ class QTime(QGroupBox):
         self.cmb_time.addItems(self.__items)
         self.cmb_time.setFont(set_bold(False))
         self.cmb_time.adjustSize()
-
-        # self.__grid_layout.addWidget(self.cmb_time, 0, 0, 1, 3)
-        # self.__grid_layout.addWidget(self.rdb_widgets[0], 1, 0, 1, 1)
-        # self.__grid_layout.addWidget(self.rdb_widgets[1], 1, 1, 1, 1)
-        # self.__grid_layout.addWidget(self.rdb_widgets[2], 1, 2, 1, 1)
-        # self.__grid_layout.addWidget(self.spn_time, 2, 0, 1, 3)
 
         self.__grid_layout.addWidget(self.rdb_widgets[0], 0, 0, 1, 1)
         self.__grid_layout.addWidget(self.rdb_widgets[1], 0, 1, 1, 1)

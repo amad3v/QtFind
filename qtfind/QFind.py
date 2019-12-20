@@ -170,11 +170,11 @@ class QtFind(QMainWindow):
         self.dark_orange_action = QAction('Dark / &Orange', self.theme_action, checkable=True)
         self.dark_pink_action = QAction('Dark / &Pink', self.theme_action, checkable=True)
 
-        self.themes_group.addAction(self.default_action)  ##
-        self.themes_group.addAction(self.dark_blue_action)  ##
-        self.themes_group.addAction(self.dark_green_action)  ##
-        self.themes_group.addAction(self.dark_orange_action)  ##
-        self.themes_group.addAction(self.dark_pink_action)  ##
+        self.themes_group.addAction(self.default_action)
+        self.themes_group.addAction(self.dark_blue_action)
+        self.themes_group.addAction(self.dark_green_action)
+        self.themes_group.addAction(self.dark_orange_action)
+        self.themes_group.addAction(self.dark_pink_action)
 
         self.theme_action.addActions([self.default_action,
                                       self.dark_blue_action,
