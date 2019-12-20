@@ -4,7 +4,7 @@ from qtfind.QFind import *
 
 
 app_icon=str(Path(Path(__file__).parent).joinpath('Icon.png'))
-print(app_icon)
+
 app = QApplication(sys.argv)
 main_window = QtFind(app_icon, 'QtFind')
 
