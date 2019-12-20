@@ -11,6 +11,7 @@ graphical interface for the powerful command find
 - [Features](#features)
 - [Report a bug](#report-a-bug)
 - [Screenshots](#screenshots)
+- [Changelog](#changelog)
 
 ## **Installation**
 
@@ -52,5 +53,13 @@ See the [GNU General Public Licence](https://www.gnu.org/licenses/gpl-3.0.html),
 *Default theme:*
 
 ![default theme](https://github.com/amad3v/QtFind/raw/master/docs/light.png)
+## **Changelog**
+- 1.0.2:
+	- Fixed issue saving settings in different Linux distros (dbm related)
+- 1.0.1:
+	- Clean-up code
+- 1.0:
+	- Initial release
+
 
 Copyright :copyright: 2019 - amad3v
