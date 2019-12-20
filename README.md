@@ -17,6 +17,15 @@ graphical interface for the powerful command find
 
     pip install qtfind
 
+To avoid running the app from the command line, you need to add it to your apps menu:
+- Download this [script](https://github.com/amad3v/QtFind/raw/master/setup.sh)
+- Open the terminal and `cd` to the location of `setup.sh`
+- run: `chmod u+x setup.sh`
+- run: `./setup.sh`
+
+Head to your apps menu, type qtfind or you can find it under Accessories.
+
+
 ## **Description**
 
 :mag: **QtFind** is a graphical interface for the powerful command ***find***.
@@ -29,7 +38,7 @@ graphical interface for the powerful command find
 
 ***from the man page***
 
-*GNU find searches the directory tree rooted at each given file name by evaluating the given expression from left to right, according to the rules of precedence.*
+> *GNU find searches the directory tree rooted at each given file name by evaluating the given expression from left to right, according to the rules of precedence.*
 
 ## **License**
 This program comes with absolutely no warranty.
