@@ -1,7 +1,7 @@
 
 
 # QtFind
-![QtFind Logo](https://github.com/amad3v/QtFind/raw/master/Icon.png)
+![QtFind Logo](https://github.com/amad3v/QtFind/raw/master/qtfind/Icon.png)
 
 graphical interface for the powerful command find
 
@@ -47,10 +47,10 @@ See the [GNU General Public Licence](https://www.gnu.org/licenses/gpl-3.0.html),
 
 *Dark theme (tone: green):*
 
-![dark theme](https://github.com/amad3v/QtFind/raw/master/docs/main_window.png)
+![dark theme](https://github.com/amad3v/QtFind/raw/master/docs/dark.png)
 
 *Default theme:*
 
-![default theme](https://github.com/amad3v/QtFind/raw/master/docs/main_window_l.png)
+![default theme](https://github.com/amad3v/QtFind/raw/master/docs/light.png)
 
 Copyright :copyright: 2019 - amad3v
