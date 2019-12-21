@@ -1,6 +1,6 @@
 import shlex
 
-from PyQt5.QtCore import QProcess, Qt
+from PyQt5.QtCore import QProcess, pyqtSlot
 from PyQt5.QtGui import QIcon
 
 from qtfind.QAbout import QAbout
@@ -11,6 +11,7 @@ from qtfind.QPermissions import *
 from qtfind.QSpacers import *
 from qtfind.QTime import *
 from qtfind.settings import Settings
+from qtfind.QLabelClick import *
 
 
 # create main window
@@ -43,7 +44,8 @@ class QtFind(QMainWindow):
     def __init_ui(self, app_icon):
         self.setup_menu()
         # label for statusbar
-        self.lbl_command = QLabel('')
+        self.lbl_command = QLabelClick('',trigger=Trigger.DOUBLE, button=Qt.LeftButton)
+        self.lbl_command.mouse_double_pressed.connect(self.copy_command)
         self.lbl_status = QLabel(self.__status[0])
         self.setup_statusbar()
         # bind the class keyPressEvent method to a customized one
@@ -159,6 +161,8 @@ class QtFind(QMainWindow):
         self.about_action = QAction('&About')
         self.about_action.setShortcut('F1')
 
+        self.about_qt_action=QAction('About Qt')
+
         self.theme_action = QMenu('&Theme', self.settings_menu)
         # the QActionGroup is used for exclusivity
         self.themes_group = QActionGroup(self.theme_action)
@@ -187,6 +191,7 @@ class QtFind(QMainWindow):
         self.settings_menu.addAction(self.copy_action)
         self.settings_menu.addAction(self.cancel_action)
         self.settings_menu.addAction(self.about_action)
+        self.settings_menu.addAction(self.about_qt_action)
         self.settings_menu.addSeparator()
         self.settings_menu.addAction(self.exit_action)
         self.settings_menu.triggered[QAction].connect(self.process_trigger)
@@ -241,6 +246,10 @@ class QtFind(QMainWindow):
 
         if widget.text() == '&About':
             self.show_about()
+            return
+
+        if widget.text() == 'About Qt':
+            QApplication.instance().aboutQt()
             return
 
         if widget.text() == 'C&lear':
@@ -347,10 +356,15 @@ class QtFind(QMainWindow):
         lst_command = shlex.split(command.replace('  ', ' ').strip())
         self.process.start(lst_command[0], lst_command[1:])
 
+    def copy_command(self):
+        command2clipboard(self.lbl_command.text())
+
+    @pyqtSlot()
     def read_output(self):
         line = self.QByteArray2str(self.process.readAllStandardOutput()).split(sep='\n')
         self.results.addItems(line)
 
+    @pyqtSlot()
     def read_errors(self):
         line = self.QByteArray2str(self.process.readAllStandardError()).split(sep='\n')
         with open('log', 'a') as f:
