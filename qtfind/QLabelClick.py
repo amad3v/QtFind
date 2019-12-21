@@ -30,8 +30,6 @@ class QLabelClick(QLabel):
             self.mouse_double_pressed.emit()
 
     def mousePressEvent(self, mouse_event):
-        print(self.button)
-        print(self.trigger)
         if self.trigger != Trigger.PRESS:
             return
 
